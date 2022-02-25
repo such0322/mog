@@ -7,6 +7,7 @@ import (
 	"github.com/liangdas/mqant/registry"
 	"github.com/liangdas/mqant/registry/etcdv3"
 	"github.com/nats-io/nats.go"
+	mGate "mog/module/gate"
 	"mog/module/web"
 	"net/http"
 	"time"
@@ -31,6 +32,8 @@ func main() {
 		module.KillWaitTTL(10*time.Second),
 		module.Registry(rs),
 		module.Nats(nc),
+		module.RegisterTTL(20*time.Second),
+		module.RegisterInterval(10*time.Second),
 	)
 
 	_ = app.OnConfigurationLoaded(func(app module.App) {
@@ -42,6 +45,7 @@ func main() {
 	})
 
 	err = app.Run(
+		mGate.Module(),
 		web.Module(),
 	)
 	if err != nil {

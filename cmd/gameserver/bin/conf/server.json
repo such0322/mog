@@ -1,15 +1,30 @@
 {
-  "Module":{
-    "helloworld":[
+  "Module": {
+    "helloworld": [
       {
-        "Id":"helloworld",
-        "ProcessID":"development"
+        "Id": "helloworld",
+        "ProcessID": "development"
+      }
+    ],
+    "rpctest": [
+      {
+        "Id": "rpctest",
+        "ProcessID": "development",
+        "Settings": {
+          "ServerID": "rpctest001"
+        }
       }
     ]
   },
-  "Rpc":{
-    "MaxCoroutine":10000,
+  "Rpc": {
+    "MaxCoroutine": 10000,
     "RpcExpired": 1,
-    "LogSuccess":false
+    "LogSuccess": false
+  },
+  "Log": {
+    "file": {
+      "daily": true,
+      "level": 7
+    }
   }
 }

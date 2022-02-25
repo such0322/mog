@@ -7,7 +7,9 @@ import (
 	"github.com/liangdas/mqant/registry"
 	"github.com/liangdas/mqant/registry/etcdv3"
 	"github.com/nats-io/nats.go"
+	"mog/module/gate"
 	"mog/module/helloworld"
+	"mog/module/rpctest"
 	"time"
 )
 
@@ -38,7 +40,9 @@ func main() {
 	})
 
 	err = app.Run(
+		gate.Module(), //这里只是用来解析gate.session才注入的，可能有其他办法
 		helloworld.Module(),
+		rpctest.Module(),
 	)
 	if err != nil {
 		log.Error(err.Error())

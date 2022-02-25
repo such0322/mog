@@ -33,6 +33,8 @@ func (mo *Web) OnInit(app module.App, settings *conf.ModuleSettings) {
 func (mo *Web) startHttpServer() *http.Server {
 	srv := &http.Server{Addr: ":8080"}
 	http.HandleFunc("/", mo.index)
+	http.HandleFunc("/test/proto", mo.testProto)
+	http.HandleFunc("/test/marshal", mo.testMarshal)
 
 	go func() {
 		if err := srv.ListenAndServe(); err != nil {

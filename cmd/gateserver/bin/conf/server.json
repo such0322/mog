@@ -1,21 +1,27 @@
 {
-  "Module":{
-    "Web":[
+  "Module": {
+    "Web": [
       {
-        "Id":"Web001",
-        "ProcessID":"development"
+        "Id": "Web001",
+        "ProcessID": "development"
+      }
+    ],
+    "Gate": [
+      {
+        "Id": "Gate001",
+        "ProcessID": "development"
       }
     ]
   },
-  "Mqtt":{
+  "Mqtt": {
     "WirteLoopChanNum": 10,
     "ReadPackLoop": 1,
     "ReadTimeout": 600,
     "WriteTimeout": 300
   },
-  "Rpc":{
-    "MaxCoroutine":10000,
+  "Rpc": {
+    "MaxCoroutine": 10000,
     "RpcExpired": 1,
-    "LogSuccess":false
+    "LogSuccess": false
   }
 }
