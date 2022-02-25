@@ -1,0 +1,15 @@
+{
+  "Module":{
+    "helloworld":[
+      {
+        "Id":"helloworld",
+        "ProcessID":"development"
+      }
+    ]
+  },
+  "Rpc":{
+    "MaxCoroutine":10000,
+    "RpcExpired": 1,
+    "LogSuccess":false
+  }
+}
